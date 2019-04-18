@@ -7,4 +7,4 @@ legs don't exceed maximum excursion within the operational envelop.
 Open "StewLegLog.m" and press F5. A GUI will pop up and you can edit the attutide or translation of the simulation and view the leg actuation.
 
 ## Example
-<img src="https://github.com/Tac321/Stewart-Platform/Images/Stewart_MATLAB.png" width="700" />
+<img src="https://github.com/Tac321/Stewart-Platform/blob/master/Images/Stewart_MATLAB.png" width="700" />
