@@ -9,4 +9,8 @@ Open "StewLegLog.m" and press F5. A GUI will pop up and you can edit the attutid
 ## Illustrations
 <img src="https://github.com/Tac321/Stewart-Platform/blob/master/Images/Stewart_MATLAB.png" width="700" />
 
-<img src="https://github.com/Tac321/Stewart-Platform/blob/master/Images/Stewart_MATLAB.png" width="700" />
+
+<img src="https://github.com/Tac321/Stewart-Platform/blob/master/Images/LegExcursionsExtrimumExcursionTestTrajectory_10_10_2018.jpg" width="700" />
+
+
+<img src="https://github.com/Tac321/Stewart-Platform/blob/master/Images/meanSmoothedPoseExtrimumExcursionTestTrajectory_10_10_2018.jpg" width="700" />
