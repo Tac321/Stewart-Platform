@@ -1,9 +1,5 @@
   // Shawn Daniel  
-  // Edited 9/19/2018
-  
-  // Note: this code is for the modeling of the Norfolk Stewart platform to understand the nature of neutral point shifting on the excursion limits of the legs.
-  
-  
+  // Edited 9/19/2018  
   
   import peasy.*; 
   import controlP5.*;  
@@ -66,10 +62,6 @@
    
    // Lyapunov Based Control
      float ke=1;
-     
-   
-   
-   
    
    
   ControlP5 cp5;
@@ -138,25 +130,16 @@
     background(200); 
     mPlatform.applyTranslationAndRotation(PVector.mult(new PVector(posX, posY, posZ), MAX_TRANSLATION), 
       PVector.mult(new PVector(pitch, rotY, rotZ), MAX_ROTATION),
-      PVector.mult(new PVector(ballY, ballX, 0), MAX_BALL_TRANSLATION)); // Note: the fact that I did this meant in the object I had erronous rotation transformaiton. 
-      
-      /* Set desired translation and rotation and  Set build platform parameters to match image of desired 
-      platform rotation. Note: this placement sets the percentage of max allowable rotation/translation
-      of the platform. This makes control more feasable. */
-                   
-                   
-    mPlatform.draw(); // draw, update platform image with respect to matching desired command platz rotation and
-          // translation.  Yes.
+      PVector.mult(new PVector(ballY, ballX, 0), MAX_BALL_TRANSLATION)); 
+ 
+    mPlatform.draw(); 
   
-    hint(DISABLE_DEPTH_TEST); //? This code isn't needed.
-    // Read the link: https://processing.org/discourse/beta/num_1213370654.html
+    hint(DISABLE_DEPTH_TEST); 
     
-    camera.beginHUD(); //
-    // Read link: https://processing.org/discourse/beta/num_1251300359.html
+    camera.beginHUD(); 
 
-    cp5.draw(); // Draw the controls cp5 in HUD display after each reset in knewly commanded position.
-				// Note: I don't know how the siders are synced to the model, via the script name in the controller definition?
-	
+    cp5.draw(); 
+    
     camera.endHUD();
     
     hint(ENABLE_DEPTH_TEST); // Play with this.
@@ -169,9 +152,8 @@
       ballX=x;
       ballY=y;
     
-      // EOM constraints applied below.
+      // EOM constraints applied below. Keep the ball on the platform.
 
-     // Wipe out the acceleration to reset the Markov on the position rate and the angular rates.
      if(x>50){  // If this is exceeded glitch it back in bounds so we can continue the simulaiton.
        x=50;
        // bassically re-initiallization.
@@ -193,20 +175,12 @@
        ddy=0;
        dy=0;
      }
-     
-  
+    
      // Put saturation on 'x' here and insure it doesn't interferee with the simulation.
       text(String.format("%.2f", x), 75,-10,-10); 
       text(String.format("%.2f", y), 75,20,-10); 
-      /*text(String.format("%.2f", ddang1), 75,50,-10); // Here to text the manifold value.
-      text(String.format("%.2f", x), 75,70,-10);
-      text(String.format("%.2f", dx), 150,-10,-10); 
-      text(String.format("%.2f", ddx), 150,20,-10); 
-      */
-     // Below puts the angle : 0< ang1 <360. Doesn't work well with SMC
    
  // NOTE: DECOUPLED DYNAMICS FOR PITCH AND ROLL BALL POSITION TRACKING
-    // X-AXIS DYNAMICS
     ang1x += dang1x*dt1; 
      // angle saturater just after angle update.
      if (ang1x>angMax*PI/180) {
@@ -225,11 +199,12 @@
     ddang1x = cntrlx;     
     x = x + dx*dt1;   
     dx += ddx*dt1;
-    ddx= ( 0*x*dang1x*dang1x-g*sin(ang1x))  - frict*dang1x; // eliminate corriolis/centripetal acceleration for aid in simulaiton. Note: inertia of the rolling ball will decrease centripetal acclleraiton abit. Look at other sEOM nformation on this system.
+    ddx= ( 0*x*dang1x*dang1x-g*sin(ang1x))  - frict*dang1x; /* eliminate corriolis/centripetal acceleration for aid in simulaiton. Note: inertia of the rolling ball 
+    will decrease centripetal acclleraiton abit. Look at otherEOM information of the ball on platform system. */
     
-    // Y-AXIS DYNAMICS  
+    
     ang1y += dang1y*dt1; 
-     // angle saturater just after angle update.
+     // angle saturate just after  update.
      if (ang1y>angMax*PI/180) {
        ang1y=angMax*PI/180;
        dang1y=0;
@@ -246,7 +221,7 @@
     ddang1y = cntrly;     
     y = y + dy*dt1;   
     dy += ddy*dt1;
-    ddy= ( 0*y*dang1y*dang1y-g*sin(ang1y))  - frict*dang1y; // eliminate corriolis/centripetal acceleration for aid in simulaiton. Note: inertia of the rolling ball will decrease centripetal acclleraiton abit. Look at other sEOM nformation on this system.
+    ddy= ( 0*y*dang1y*dang1y-g*sin(ang1y))  - frict*dang1y; 
     }
   
      // Below is control activation key.
@@ -257,27 +232,27 @@
     
     if(llave3 & llave2){    // Turn on control Linear Full state Feedback.
       
-          if(abs(ang1x)!=angMax) {   // To prevent sticky simulation
-             cntrlx= 1*(k1*(x-refx)+k2*dx+k3*ang1x+k4*dang1x);  // Tracking regulation added.  ref scaled to map full rotation of the system
+          if(abs(ang1x)!=angMax) {   
+             cntrlx= 1*(k1*(x-refx)+k2*dx+k3*ang1x+k4*dang1x);  // Tracking regulation added. 
           }
-          if(abs(ang1y)!=angMax) {   // To prevent sticky simulation
+          if(abs(ang1y)!=angMax) {   
              cntrly= 1*(k1*(y-refy)+k2*dy+k3*ang1y+k4*dang1y);
           }
     }
    
-    // If this key is off then turn off controller all together
+    // View perturbation. Not complete.
       if(llave4 & llave2){       
        ddx=ddx+20*perturb;  // add a scalled steady state disturbance. 
       }
       
-      // Initialte TRACK REFERENCE TRAJECTORY here.
+      // Initiate TRACK REFERENCE TRAJECTORY here.
       if(llave5 & llave2) {
         refx = 50*cos(theta1);  
         refy = 50*sin(theta2);
         theta1 += PI/100.0;
         theta2 += PI/100.0;     
       }
-   }    //<>//
+   }   
 
   void controlEvent(ControlEvent theEvent) {
     camera.setActive(false);  
