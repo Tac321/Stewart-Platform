@@ -152,23 +152,23 @@
       ballX=x;
       ballY=y;
     
-      // EOM constraints applied below. Keep the ball on the platform.
+      //  Keep the ball on the platform.
 
-     if(x>50){  // If this is exceeded glitch it back in bounds so we can continue the simulaiton.
+     if(x>50){  
        x=50;
-       // bassically re-initiallization.
-       ddx=0; // 
-       dx=0;  // Wow! this works for implying a wall on the beam. 
+       
+       ddx=0; 
+       dx=0;  
      }
      if(x<-50){
        x= -50;
        ddx=0;
        dx=0;
      }
-     if(y>50){  // If this is exceeded glitch it back in bounds so we can continue the simulaiton.
+     if(y>50){  
        y=50;
        ddy=0;  
-       dy=0;  // Wow! this works for implying a wall on the beam. 
+       dy=0;  
      }
      if(y<-50){
        y= -50;
