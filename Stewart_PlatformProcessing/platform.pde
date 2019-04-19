@@ -1,5 +1,5 @@
 // Shawn Daniel
-// Analyzed 4/25/2016
+// Analyzed 9/21/18
 
 class Platform {
   private PVector translation, rotation, initialHeight, mball;  
