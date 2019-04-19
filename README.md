@@ -10,18 +10,18 @@ Note: Follow the color scheme for the rainbow "roygbv", leg No. 1 is red dashed,
 ## Illustrations
 <img src="https://github.com/Tac321/Stewart-Platform/blob/master/Images/Stewart_MATLAB.png" width="700" />
 
-Below, the pose information was extracted from the Arduino IMU and pushed through the Stewart simulation to extract approximate leg actuations, neglecting simulator translation
+Below, the pose information was extracted from the Arduino IMU and pushed through the Stewart simulation to extract approximate leg actuations, neglecting simulator translation.
 
 
 <img src="https://github.com/Tac321/Stewart-Platform/blob/master/Images/meanSmoothedPoseExtrimumExcursionTestTrajectory_10_10_2018.jpg" width="700" />
 
 
-Below are the corresponding leg actuiations needed to mimic the poses of the above plot.
+Below are the corresponding leg actuations needed to mimic the poses of the above plot.
 
 <img src="https://github.com/Tac321/Stewart-Platform/blob/master/Images/LegExcursionsExtrimumExcursionTestTrajectory_10_10_2018.jpg" width="700" />
 
 
-A Processing code verison of the Stewart platform is attached. This algorithm acts to track a rolling ball to a user defined position of the platform plate. Note: The ball model is not an exact nonlinear model of a sphere, this higher fidelity is to be added later. 
+A Processing code version of the Stewart platform is attached. This algorithm acts to track a rolling ball to a user defined position of the platform plate. Note: The ball model is not an exact nonlinear model of a sphere, this higher fidelity is to be added later. 
 
 <img src="https://github.com/Tac321/Stewart-Platform/blob/master/Images/StewartMotionCue.gif" width="700" />
 
