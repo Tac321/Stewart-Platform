@@ -22,9 +22,9 @@ Below are the corresponding leg actuiations needed to mimic the poses of the abo
 
 A Processing code verison of the Stewart platform is attached. This algorithm acts to track a rolling ball to a user defined position of the platform plate. Note: The ball model is not an exact nonlinear model of a sphere, this higher fidelity is to be added later. 
 
-<img src="https://github.com/Tac321/Stewart-Platform/blob/master/Images/StewartPlatformProcessing.png" width="700" />
+<img src="https://github.com/Tac321/Stewart-Platform/blob/master/Images/StewartMotionCue.gif" width="700" />
 
 
 ## How to run
-Open "SURVICE_Stewart_Platform.pde"  and run the file. 
+Open "SURVICE_Stewart_Platform.pde"  and run the file such that...
 
