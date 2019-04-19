@@ -1,6 +1,5 @@
 # Stewart Platform Simulation
-Simulation environment of MATLAB is used to model Stewart Platform, for graphing leg actuation. This was done to ensure that the real simulator
-legs don't exceed maximum excursion within the operational envelop.
+Simulation environment of MATLAB is used to model Stewart Platform, for graphing leg actuation. This code can ensure that the real simulator legs don't exceed maximum excursion within the operational envelop.
 
 
 ## How to run
