@@ -1,16 +1,16 @@
 # Stewart Platform Simulation
-Simulation environment of MATLAB is used to model Stewart Platform, for graphing leg actuation. This code can ensures that the real simulator legs don't exceed maximum excursion within the operational envelop.
+Simulation environment of MATLAB and Processing is used to model the Stewart Platform problem. The MATLAB model is for graphing leg actuation. This code can ensures that the real simulator legs don't exceed maximum excursion within the operational envelop. The Processing model was made to study motion cueing methods of the simulator problem.
 
 
 ## How to run
-Open "StewLegLog.m" and press F5. A GUI will pop up and you can edit the attutide or translation of the simulation and view the leg actuation.
+Open "StewLegLog.m" and press F5. A GUI will pop up and you can edit the attutide or translation of the simulator and view the corresponding leg actuation.
 
 Note: Follow the color scheme for the rainbow "roygbv", leg No. 1 is red dashed, leg No. 2 is yellow, leg 3 No. 3 is green and etc.
 
 ## Illustrations
 <img src="https://github.com/Tac321/Stewart-Platform/blob/master/Images/Stewart_MATLAB.png" width="700" />
 
-Below, the pose information was extracted from the Arduino IMU and pushed through the Stewart simulation to extract approximate leg actuations, neglecting simulator translation.
+Below, the pose information was extracted from an Arduino IMU and pushed through the Stewart simulation to extract approximate leg actuations, neglecting simulator translation actuation.
 
 
 <img src="https://github.com/Tac321/Stewart-Platform/blob/master/Images/meanSmoothedPoseExtrimumExcursionTestTrajectory_10_10_2018.jpg" width="700" />
