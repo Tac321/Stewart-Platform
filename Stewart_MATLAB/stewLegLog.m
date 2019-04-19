@@ -1,5 +1,5 @@
 % Shawn Daniel
-% 4/18/2019
+% 9/18/2018
 % Notes: The sign convention of the simulator deflections  and the
 % calculation of the leg actuations were off. I corrected the coordinate
 % transform math in the inverse kinematics to correctly calculate each leg
