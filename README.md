@@ -29,3 +29,21 @@ A Processing code version of the Stewart platform is attached. This algorithm ac
 ## How to run
 Open "SURVICE_Stewart_Platform.pde"  and run the file such that...
 
+## MPCC
+Simulation environment of the Model Predictive Contouring Controller (MPCC) for Autonomous Racing developed by the Automatic Control Lab (IfA) at ETH Zurich.
+
+# Note
+Code developed originally by Dr. Alex Liniger et al. My repository only uses an alternative to Quadprog(), (Quadratic Problem optimization solver) . My QP solver was coded from scratch.
+
+
+## How to run
+
+# Before running code
+1) Install libraries ControlP5, Peasy, and oscP5. Youtube videos explain how to do this.
+
+## Run code
+1) Open "Stewart_PlatformProcessing.pde"
+2) Run the program
+3) Press the following in sequence "g', 'h', 'j' 
+4) Use the bottom two right side sliders to select desired marble positions of the platform, so the controller can maneuver the ball on the platform.
+
