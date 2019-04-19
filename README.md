@@ -1,5 +1,5 @@
 # Stewart Platform Simulation
-Simulation environment of MATLAB is used to model Stewart Platform, for graphing leg actuation. This code can ensure that the real simulator legs don't exceed maximum excursion within the operational envelop.
+Simulation environment of MATLAB is used to model Stewart Platform, for graphing leg actuation. This code can ensures that the real simulator legs don't exceed maximum excursion within the operational envelop.
 
 
 ## How to run
@@ -21,19 +21,10 @@ Below are the corresponding leg actuations needed to mimic the poses of the abov
 <img src="https://github.com/Tac321/Stewart-Platform/blob/master/Images/LegExcursionsExtrimumExcursionTestTrajectory_10_10_2018.jpg" width="700" />
 
 
-A Processing code version of the Stewart platform is attached. This algorithm acts to track a rolling ball to a user defined position of the platform plate. Note: The ball model is not an exact nonlinear model of a sphere, this higher fidelity is to be added later. 
+
+A Processing code version of the Stewart platform is attached. This algorithm acts to track a rolling ball to a user defined position on the platform plate. Note: The ball model is not an exact nonlinear model of a sphere, this higher fidelity is to be added later. 
 
 <img src="https://github.com/Tac321/Stewart-Platform/blob/master/Images/StewartMotionCue.gif" width="700" />
-
-
-## How to run
-Open "SURVICE_Stewart_Platform.pde"  and run the file such that...
-
-## MPCC
-Simulation environment of the Model Predictive Contouring Controller (MPCC) for Autonomous Racing developed by the Automatic Control Lab (IfA) at ETH Zurich.
-
-# Note
-Code developed originally by Dr. Alex Liniger et al. My repository only uses an alternative to Quadprog(), (Quadratic Problem optimization solver) . My QP solver was coded from scratch.
 
 
 ## How to run
@@ -45,5 +36,5 @@ Code developed originally by Dr. Alex Liniger et al. My repository only uses an 
 1) Open "Stewart_PlatformProcessing.pde"
 2) Run the program
 3) Press the following in sequence "g', 'h', 'j' 
-4) Use the bottom two right side sliders to select desired marble positions of the platform, so the controller can maneuver the ball on the platform.
+4) Use the bottom two right side sliders to select desired marble positions on the platform, so the controller can maneuver the ball on the platform.
 
