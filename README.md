@@ -13,8 +13,12 @@ Note: Follow the color scheme for the rainbow "roygbv", leg No. 1 is red dashed,
 Below, the pose information was extracted from an Arduino IMU and pushed through the Stewart simulation to extract approximate leg actuations, neglecting simulator translation actuation.
 
 
-
 <img src="https://github.com/Tac321/Mean-Shift-Tracking-MST-/blob/master/Picture3.jpg" width="700" />
+
+
+
+
+
 
 
 
